@@ -57,7 +57,7 @@
 			"response": []
 		},
 		{
-			"name": "Delete the item from CART",
+			"name": "Delete the item from cart",
 			"request": {
 				"auth": {
 					"type": "bearer",
