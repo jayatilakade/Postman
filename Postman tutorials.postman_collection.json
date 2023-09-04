@@ -1,0 +1,766 @@
+{
+	"info": {
+		"_postman_id": "8e89b5f6-bfd5-4fe6-b5d0-816c19feed82",
+		"name": "Postman tutorials",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16439434",
+		"_collection_link": "https://warped-equinox-248995.postman.co/workspace/eb96587e-ebe6-42b0-b29b-52a1be93b7e1/collection/16439434-8e89b5f6-bfd5-4fe6-b5d0-816c19feed82?action=share&source=collection_link&creator=16439434"
+	},
+	"item": [
+		{
+			"name": "Modify the cart item quantity",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \r\n    \"customerName\": \"Jayati\",\r\n    \"quantity\" : 2,\r\n    \"comment\" : \"This comment is coming from PATCH request\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseURL}}/carts/:cartId/items/:itemId",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"carts",
+						":cartId",
+						"items",
+						":itemId"
+					],
+					"variable": [
+						{
+							"key": "cartId",
+							"value": "{{cartID}}"
+						},
+						{
+							"key": "itemId",
+							"value": "996794649"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete the item from cart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \r\n    \"customerName\": \"Jayati\",\r\n    \"quantity\" : 2,\r\n    \"comment\" : \"This comment is coming from PATCH request\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseURL}}/carts/:cartId/items/:itemId",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"carts",
+						":cartId",
+						"items",
+						":itemId"
+					],
+					"variable": [
+						{
+							"key": "cartId",
+							"value": "{{cartID}}"
+						},
+						{
+							"key": "itemId",
+							"value": "996794649"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST-PUT-PATCH",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Jayashree Lakade\",\r\n  \"trips\": 255,\r\n  \"airline\": 35\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.instantwebtools.net/v1/passenger/647c57deced4ec32547c33e0",
+					"protocol": "https",
+					"host": [
+						"api",
+						"instantwebtools",
+						"net"
+					],
+					"path": [
+						"v1",
+						"passenger",
+						"647c57deced4ec32547c33e0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://simple-grocery-store-api.glitch.me/Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://simple-grocery-store-api.glitch.me/Status",
+					"protocol": "https",
+					"host": [
+						"simple-grocery-store-api",
+						"glitch",
+						"me"
+					],
+					"path": [
+						"Status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "grocery status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/status",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all products",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.collectionVariables.set('Name',\"247 softwares\");\r",
+							"const response = pm.response.json();\r",
+							"console.log(response[0].id);\r",
+							"\r",
+							"console.log('20'==20);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/products",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a product by query param",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/products?category=candy&name=Starbucks Coffee Variety Pack, 100% Arabica",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "candy"
+						},
+						{
+							"key": "category",
+							"value": "Dairy",
+							"disabled": true
+						},
+						{
+							"key": "Category",
+							"value": "bread-bakery",
+							"disabled": true
+						},
+						{
+							"key": "category",
+							"value": "eggs",
+							"disabled": true
+						},
+						{
+							"key": "name",
+							"value": "Starbucks Coffee Variety Pack, 100% Arabica"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a product by product ID path variable",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/products/:productId",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"products",
+						":productId"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "candy",
+							"disabled": true
+						},
+						{
+							"key": "category",
+							"value": "Dairy",
+							"disabled": true
+						},
+						{
+							"key": "Category",
+							"value": "bread-bakery",
+							"disabled": true
+						},
+						{
+							"key": "category",
+							"value": "eggs",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "productId",
+							"value": "4643"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Path variable",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/products/4643",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"products",
+						"4643"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Path and query parameters",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/products/:productId?product-label=true",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"products",
+						":productId"
+					],
+					"query": [
+						{
+							"key": "product-label",
+							"value": "true"
+						}
+					],
+					"variable": [
+						{
+							"key": "productId",
+							"value": "4643"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a product variable Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/products/4643",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"products",
+						"4643"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "candy",
+							"disabled": true
+						},
+						{
+							"key": "category",
+							"value": "Dairy",
+							"disabled": true
+						},
+						{
+							"key": "Category",
+							"value": "bread-bakery",
+							"disabled": true
+						},
+						{
+							"key": "category",
+							"value": "eggs",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a new cart",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/carts",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"carts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add items to cart",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"productId\": 2585\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseURL}}/carts/:cartId/items",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"carts",
+						":cartId",
+						"items"
+					],
+					"query": [
+						{
+							"key": "productId",
+							"value": "3674",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "cartId",
+							"value": "{{cartID}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get cart items and quantity",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{BaseURL}}/carts/:cartId",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"carts",
+						":cartId"
+					],
+					"variable": [
+						{
+							"key": "cartId",
+							"value": "{{cartID}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register new client",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"clientName\": \"Postman on Valentin's computer\",\r\n   \"clientEmail\": \"jay@example.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseURL}}/api-clients",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"api-clients"
+					],
+					"query": [
+						{
+							"key": "clientName",
+							"value": "Jayati Lakade",
+							"disabled": true
+						},
+						{
+							"key": "clientEmail",
+							"value": "a@g.com",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Replace a product",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productId\":4646\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseURL}}/carts/:cartId/items/:itemId",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"carts",
+						":cartId",
+						"items",
+						":itemId"
+					],
+					"variable": [
+						{
+							"key": "cartId",
+							"value": "{{cartID}}"
+						},
+						{
+							"key": "itemId",
+							"value": "996794649"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create an order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cartId\": \"CsR-Jas5TiXD1HX122IZL\",\r\n    \"customerName\": \"John Doe\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseURL}}/orders",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get the Orders",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/orders",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update the order data",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \r\n    \"customerName\": \")(*&^%$#@\",\r\n    \"comment\" : \"(*&^%$#@\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseURL}}/orders/:orderId",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"orders",
+						":orderId"
+					],
+					"variable": [
+						{
+							"key": "orderId",
+							"value": "GmGJdvzfi4_cQSlaN_jC4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/orders/:orderId",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"orders",
+						":orderId"
+					],
+					"variable": [
+						{
+							"key": "orderId",
+							"value": "RA8Jr_jHxN2l4B4wVvqCh"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete order Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/orders/:orderId",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"orders",
+						":orderId"
+					],
+					"variable": [
+						{
+							"key": "orderId",
+							"value": "RA8Jr_jHxN2l4B4wVvqCh"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BaseURL",
+			"value": "https://simple-grocery-store-api.glitch.me"
+		},
+		{
+			"key": "accessToken",
+			"value": "Your access token",
+			"type": "string"
+		},
+		{
+			"key": "cartID",
+			"value": "Place holder",
+			"type": "string"
+		},
+		{
+			"key": "Name",
+			"value": ""
+		}
+	]
+}
